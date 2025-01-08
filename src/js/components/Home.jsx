@@ -40,6 +40,7 @@ const Home = () => {
   return (
     <div className="contenedor semaforo">
       <div className="barra"></div> {/*le coloco esta barra central arriba*/} 
+	  {/*a continuacion los div de cada uno de los colores del semaforo */}
       <div
         className={claseRoja}
         onClick={() => activarColor('rojo')}>
@@ -57,6 +58,7 @@ const Home = () => {
 			onClick={() => activarColor('purpura')}>
 		</div>
 	  )}
+	  {/*a continuacion los botones para alternar y añadir una luz purpura */}
 	  <button onClick={alternarColores}>Alternar Colores</button>
 	  <button onClick={agregarColorPurpura}>Añadir Color Púrpura</button>
     </div>

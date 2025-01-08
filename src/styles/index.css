@@ -19,7 +19,7 @@ body {
   
   .barra {
     width: 10px;
-    height: 50px; /* Puedes ajustar la altura según necesites */
+    height: 50px; /* se ajustar la altura según necesitamos */
     background-color: black;
     position: absolute;
     top: -50px; /* Ajusta según la altura de la barra */
