@@ -1,27 +1,32 @@
 import React, { useState } from "react";
-
+// componente principal
 const Home = () => {
+	// estado para el color activo (el que esta brillando)
   const [colorActivo, setColorActivo] = useState('');
+    // estado para la lista de colores del semaforo
   const [colores, setColores] = useState(['rojo','amarillo','verde']);
-
+	// funcion flecha para activar un color especifico
   const activarColor = (color) => {
-    setColorActivo(color);
+    setColorActivo(color); // llamo a la funcion para actualizar el color activo
   };
+  	// funcion para alterne de colores
   const alternarColores = () => {
-	const siguienteColor = colores[(colores.indexOf(colorActivo)+1)% colores.length];
+	// busca el indice de color activo y pasa al siguiernte con indexOf detecta que indice tiene y le añadimos +1 para pasar al siguiente
+	const siguienteColor = colores[(colores.indexOf(colorActivo)+1)% colores.length];//con este ultimo cuando llega al final, suma indice 2 +1 y lo divide colores.length que es 3 = 0, y vuelve al principio
 	setColorActivo(siguienteColor);
   };
+  // añado funcion para añadir color purpura
   const agregarColorPurpura = () => {
-	if (!colores.includes('purpura')){
-		setColores([...colores, 'purpura'])
+	if (!colores.includes('purpura')){// verifica que el purpura no esta
+		setColores([...colores, 'purpura'])// lo añade a la lista de colores
 	}
   }
-
+// agrago variables de los colores con dos clases cada una luz y el color
   let claseRoja = 'luz roja';
   let claseAmarilla = 'luz amarilla';
   let claseVerde = 'luz verde';
   let clasePurpura = 'luz purpura'
-
+// condicionales para añadir la clase brillo al color activo
   if (colorActivo === 'rojo') {
     claseRoja += ' brillo';
   } else if (colorActivo === 'amarillo') {
@@ -34,7 +39,7 @@ const Home = () => {
 
   return (
     <div className="contenedor semaforo">
-      <div className="barra"></div> 
+      <div className="barra"></div> {/*le coloco esta barra central arriba*/} 
       <div
         className={claseRoja}
         onClick={() => activarColor('rojo')}>
@@ -47,71 +52,16 @@ const Home = () => {
         className={claseVerde}
         onClick={() => activarColor('verde')}>
       </div>
+	  {colores.includes('purpura')&& (
+		<div className={clasePurpura} 
+			onClick={() => activarColor('purpura')}>
+		</div>
+	  )}
+	  <button onClick={alternarColores}>Alternar Colores</button>
+	  <button onClick={agregarColorPurpura}>Añadir Color Púrpura</button>
     </div>
   );
 };
 
 export default Home;
 
-/*import React , {useState} from "react";
-
-
-const Home = () => {
-	const [colorActivo, setColorActivo]= useState('');
-	const activarColor = (color) => {setColorActivo(color);
-	}
-	let claseRoja = 'luz roja';
-	let claseAmarilla = 'luz amarilla';
-	let claseVerde = 'luz verde';
-	if (colorActivo === 'rojo') {
-		claseRoja += ' brillo';
-	} else if (colorActivo === 'amarillo') {
-		claseAmarilla += ' brillo';
-	} else if (colorActivo === 'verde') {
-		claseVerde += ' brillo';
-	}
-	return (
-		<div className="contenedor semaforo">
-			<div className={claseRoja} onClick={() => activarColor('rojo')}>
-			</div>
-			<div className={claseAmarilla} onClick={() => activarColor('amarillo')}>
-			</div>
-			<div className={claseVerde} onClick={() => activarColor('verde')}>
-			</div>
-		</div>
-		
-	)
-}
-export default Home;*/
-
-
-
-//create your first component
-/*const Home = () => {
-	const [selectedColor, setSelectedColor] = useState("green");
-	return (
-		<div className="trafic-light">
-			<div
-				onClick={() => setSelectedColor("red")}
-				className={
-					"light red " + (selectedColor === "red" ? "glow" : "")
-				}></div>
-			;
-			<div
-				onClick={() => setSelectedColor("yellow")}
-				className={
-					"light yellow" +
-					(selectedColor === "yellow" ? " yellow glow" : "")
-				}></div>{" "}
-			;
-			<div
-				onClick={() => setSelectedColor("green")}
-				className={
-					"light green" +
-					(selectedColor === "green" ? " green glow" : "")
-				}></div>
-		</div>
-	);
-};
-
-export default Home;*/
