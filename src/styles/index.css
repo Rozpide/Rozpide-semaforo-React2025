@@ -14,15 +14,15 @@ body {
     padding: 10px;
     background-color: black;
     border-radius: 20px;
-    position: relative; /* Necesario para posicionar la barra */
+    position: relative; /* Necesario para situar la posicion de la barra */
   }
   
   .barra {
-    width: 10px;
-    height: 50px; /* se ajustar la altura según necesitamos */
+    width: 15px;
+    height: 80px; /* se ajusta la altura según necesitamos si lo igualamos con el top en positivo */
     background-color: black;
     position: absolute;
-    top: -50px; /* Ajusta según la altura de la barra */
+    top: -80px; /*vamos jugando hasta ajustarla a la medida que queramos para subir o bajar la barra*/
   }
   
   .luz {
@@ -51,7 +51,7 @@ body {
   }
   
   .luz.brillo {
-    box-shadow: 0 0 30px 15px rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 50px 20px rgba(227, 228, 160, 0.9);
   }
   
   button {
