@@ -2,14 +2,25 @@ import React, { useState } from "react";
 
 const Home = () => {
   const [colorActivo, setColorActivo] = useState('');
+  const [colores, setColores] = useState(['rojo','amarillo','verde']);
 
   const activarColor = (color) => {
     setColorActivo(color);
   };
+  const alternarColores = () => {
+	const siguienteColor = colores[(colores.indexOf(colorActivo)+1)% colores.length];
+	setColorActivo(siguienteColor);
+  };
+  const agregarColorPurpura = () => {
+	if (!colores.includes('purpura')){
+		setColores([...colores, 'purpura'])
+	}
+  }
 
   let claseRoja = 'luz roja';
   let claseAmarilla = 'luz amarilla';
   let claseVerde = 'luz verde';
+  let clasePurpura = 'luz purpura'
 
   if (colorActivo === 'rojo') {
     claseRoja += ' brillo';
@@ -17,6 +28,8 @@ const Home = () => {
     claseAmarilla += ' brillo';
   } else if (colorActivo === 'verde') {
     claseVerde += ' brillo';
+  } else if (colorActivo === 'purpura') {
+	clasePurpura += ' brillo';
   }
 
   return (
