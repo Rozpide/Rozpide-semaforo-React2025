@@ -1,20 +1,75 @@
-import React , {useState} from "react";
+import React, { useState } from "react";
+
+const Home = () => {
+  const [colorActivo, setColorActivo] = useState('');
+
+  const activarColor = (color) => {
+    setColorActivo(color);
+  };
+
+  let claseRoja = 'luz roja';
+  let claseAmarilla = 'luz amarilla';
+  let claseVerde = 'luz verde';
+
+  if (colorActivo === 'rojo') {
+    claseRoja += ' brillo';
+  } else if (colorActivo === 'amarillo') {
+    claseAmarilla += ' brillo';
+  } else if (colorActivo === 'verde') {
+    claseVerde += ' brillo';
+  }
+
+  return (
+    <div className="contenedor semaforo">
+      <div className="barra"></div> 
+      <div
+        className={claseRoja}
+        onClick={() => activarColor('rojo')}>
+      </div>
+      <div
+        className={claseAmarilla}
+        onClick={() => activarColor('amarillo')}>
+      </div>
+      <div
+        className={claseVerde}
+        onClick={() => activarColor('verde')}>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
+
+/*import React , {useState} from "react";
 
 
 const Home = () => {
-	const [selectColorRed, setSelectColorRed]= useState ('red');
-	const [selectColorOrange, setSelectColorOrange]= useState ('orange');
-	const [selectColorGreen, setSelectColorGreen]= useState ('green');
+	const [colorActivo, setColorActivo]= useState('');
+	const activarColor = (color) => {setColorActivo(color);
+	}
+	let claseRoja = 'luz roja';
+	let claseAmarilla = 'luz amarilla';
+	let claseVerde = 'luz verde';
+	if (colorActivo === 'rojo') {
+		claseRoja += ' brillo';
+	} else if (colorActivo === 'amarillo') {
+		claseAmarilla += ' brillo';
+	} else if (colorActivo === 'verde') {
+		claseVerde += ' brillo';
+	}
 	return (
-		<div className="container trafic-light">
-			<div onClick={setSelectColorRed}></div>
-			<div onClick={setSelectColorOrange}></div>
-			<div onClick={setSelectColorGreen}></div>
-			
+		<div className="contenedor semaforo">
+			<div className={claseRoja} onClick={() => activarColor('rojo')}>
+			</div>
+			<div className={claseAmarilla} onClick={() => activarColor('amarillo')}>
+			</div>
+			<div className={claseVerde} onClick={() => activarColor('verde')}>
+			</div>
 		</div>
+		
 	)
 }
-export default Home;
+export default Home;*/
 
 
 

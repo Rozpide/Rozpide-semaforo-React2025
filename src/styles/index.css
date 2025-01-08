@@ -1,28 +1,56 @@
-/* 
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
-.trafic-light{background: black;
-    padding: 10px;
-    display: inline-block;
+body {
+    display: flex;
     justify-content: center;
-    
-    
-}
-.light{
-    border-radius: 50%;
+    align-items: center;
+    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+    margin: 0;
+  }
+  
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100px;
-    height: 100px;
-    background: blue;
-}
-.red{background: red;}
-.green{background: green;}
-.yellow{background: yellow;}
-.glow{box-shadow: 0px 0px 9px 4px #747DE8;}
+    padding: 10px;
+    background-color: black;
+    border-radius: 20px;
+    position: relative; /* Necesario para posicionar la barra */
+  }
+  
+  .barra {
+    width: 12px;
+    height: 100px; /* Puedes ajustar la altura según necesites */
+    background-color: black;
+    position: absolute;
+    top: -100px; /* Ajusta según la altura de la barra */
+  }
+  
+  .luz {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    border-radius: 50%;
+    background-color: gray;
+    transition: box-shadow 0.3s;
+  }
+  
+  .luz.roja {
+    background-color: red;
+  }
+  
+  .luz.amarilla {
+    background-color: yellow;
+  }
+  
+  .luz.verde {
+    background-color: green;
+  }
+  
+  .luz.brillo {
+    box-shadow: 0 0 50px 20px rgba(180, 201, 139, 0.8);
+  }
+  .semaforo {
+    border-radius: 20px;
+  }
+  
