@@ -2,9 +2,14 @@ import React , {useState} from "react";
 
 
 const Home = () => {
-
+	const [selectColorRed, setSelectColorRed]= useState ('red');
+	const [selectColorOrange, setSelectColorOrange]= useState ('orange');
+	const [selectColorGreen, setSelectColorGreen]= useState ('green');
 	return (
-		<div className="container">
+		<div className="container trafic-light">
+			<div onClick={setSelectColorRed}></div>
+			<div onClick={setSelectColorOrange}></div>
+			<div onClick={setSelectColorGreen}></div>
 			
 		</div>
 	)
