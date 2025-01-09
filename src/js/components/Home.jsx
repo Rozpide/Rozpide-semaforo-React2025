@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// componente principal
+// componente funcional principal
 const Home = () => {
 	// estado para el color activo (el que esta brillando)
   const [colorActivo, setColorActivo] = useState('');
@@ -17,11 +17,11 @@ const Home = () => {
   };
   // añado funcion para añadir color purpura
   const agregarColorPurpura = () => {
-	if (!colores.includes('purpura')){// verifica que el purpura no esta
-		setColores([...colores, 'purpura'])// lo añade a la lista de colores
+	if (!colores.includes('purpura')){// condicion que verifica que el purpura no esta y
+		setColores([...colores, 'purpura'])// lo añade a la lista de colores con el propagador (...)
 	}
   }
-// agrago variables de los colores con dos clases cada una luz y el color
+// agrago variables de los colores con dos clases cada una luz (general) y el color(especifico), de esta manera las clases son mas manejables dentro de un condicional
   let claseRoja = 'luz roja';
   let claseAmarilla = 'luz amarilla';
   let claseVerde = 'luz verde';
@@ -53,14 +53,15 @@ const Home = () => {
         className={claseVerde}
         onClick={() => activarColor('verde')}>
       </div>
-	  {colores.includes('purpura')&& (
-		<div className={clasePurpura} 
-			onClick={() => activarColor('purpura')}>
-		</div>
-	  )}
+    {/* a continuacion un condicional que contrasta si existe purpura en el array, si es asi crea un div para añadir al semaforo el purpura */}
+      {colores.includes('purpura')&& (
+      <div className={clasePurpura} 
+        onClick={() => activarColor('purpura')}>
+      </div>
+	    )}
 	  {/*a continuacion los botones para alternar y añadir una luz purpura */}
-	  <button onClick={alternarColores}>Alternar Colores</button>
-	  <button onClick={agregarColorPurpura}>Añadir Color Púrpura</button>
+      <button onClick={alternarColores}>Alternar Colores</button>
+      <button onClick={agregarColorPurpura}>Añadir Color Púrpura</button>
     </div>
   );
 };
