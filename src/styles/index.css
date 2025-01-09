@@ -19,7 +19,7 @@ body {
   
   .barra {
     width: 15px;
-    height: 80px; /* se ajusta la altura según necesitamos si lo igualamos con el top en positivo */
+    height: 80px; /* se ajusta la altura según necesitamos lo igualamos con el top = negativo */
     background-color: black;
     position: absolute;
     top: -80px; /*vamos jugando hasta ajustarla a la medida que queramos para subir o bajar la barra*/
@@ -57,10 +57,10 @@ body {
   button {
     margin-top: 10px;
     padding: 5px 10px;
-    border: none;
     background-color: black;
     color: white;
-    cursor: pointer;
+    cursor:progress;/*cambia el cursor cuando esta encima del boton*/
     font-size: 14px;
+    border-radius: 20px;
   }
   

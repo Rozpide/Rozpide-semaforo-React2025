@@ -39,7 +39,7 @@ const Home = () => {
 
   return (
     <div className="contenedor semaforo">
-      <div className="barra"></div> {/*le coloco esta barra central arriba*/} 
+      <div className="barra"></div> {/*le coloco esta barra central arriba para simular la imagen*/} 
 	  {/*a continuacion los div de cada uno de los colores del semaforo */}
       <div
         className={claseRoja}
